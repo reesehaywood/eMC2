@@ -1,0 +1,14 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - eMC Second Check</title>
+    {% else %}
+    <title>Welcome to eMC Second Check</title>
+    {% endif %}
+  </head>
+  <body>
+    <div>eMC Second Check: <a href="/index">Home</a></div>
+    <hr>
+    {% block content %}{% endblock %}
+  </body>
+</html>

@@ -1,0 +1,13 @@
+CC=nvcc
+CFLAGS=-arch=sm_35 --compiler-options "-fPIC -shared -O3 -mtune=native" -O3 -use_fast_math
+OBJ= pninpoly.o interp.o copyCD.o
+%.o: %.cu
+	$(CC) -c -o $@ $< $(CFLAGS) 
+
+PYelec8-7.5.o: pyElecCudaCal8fph-noifs.cu
+	$(CC) -c -o PYelec8-7.5.o $(CFLAGS) -maxrregcount=32 ./pyElecCudaCal8fph-noifs.cu -lgsl -lgslblas
+
+all: $(OBJ)
+	
+clean:
+	rm *.o

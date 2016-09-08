@@ -1,0 +1,7 @@
+nvcc -arch=sm_35 -c -o PYelec8-7.5.o --compiler-options "-fPIC -shared -O3 -mtune=native" -O3 -use_fast_math -maxrregcount=32 pyElecCudaCal8fph-noifs.cu -lgsl -lgslcblas
+
+nvcc -arch=sm_35 -c -o pninpoly.o --compiler-options "-fPIC -shared -O3 -mtune=native" -O3 -use_fast_math pninpoly.cu
+
+nvcc -arch=sm_35 -c -o interp.o --compiler-options "-fPIC -shared -O3 -mtune=native" -O3 -use_fast_math interp.cu
+
+nvcc -arch=sm_35 -c -o copyCD.o --compiler-options "-fPIC -shared -O3 -mtune=native" -O3 -use_fast_math copyCD.cu
